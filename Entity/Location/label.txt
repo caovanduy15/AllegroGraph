@@ -1,0 +1,137 @@
+DH Bach Khoa
+Birmingham
+Blackpool
+Bolton
+Bradford
+Brighton
+Bristol
+Coventry
+Derby
+Dudley
+Huddersfield
+Hull
+Ipswich
+Leeds
+Leicester
+Liverpool
+London
+Luton
+Manchester
+Middlesbrough
+Milton Keynes
+Newcastle
+Northampton
+Norwich
+Nottingham
+Peterborough
+Plymouth
+Poole
+Portsmouth
+Preston
+Reading
+Sheffield
+Southampton
+Southend-on-Sea
+Stockport
+Stoke-on-Trent
+Sunderland
+Telford
+Walsall
+West Bromwich
+Wolverhampton
+Sydney
+Melbourne
+Brisbane
+Perth
+Adelaide
+Gold Coast–Tweed Heads
+Newcastle–Maitland
+Canberra–Queanbeyan
+Sunshine Coast
+Wollongong
+Geelong
+Hobart
+Townsville
+Cairns
+Darwin
+Toowoomba
+Ballarat
+Bendigo
+Albury–Wodonga
+Mackay
+Rockhampton
+Launceston
+Bunbury
+Bundaberg
+Coffs Harbour
+Hervey Bay
+Wagga Wagga
+Tamworth
+Shepparton–Mooroopna
+Port Macquarie
+Gladstone–Tannum Sands
+Mildura
+Traralgon–Morwell
+Orange
+Bowral–Mittagong
+Busselton
+Geraldton
+Dubbo
+Nowra–Bomaderry
+Warragul–Drouin
+Bathurst
+Warrnambool
+Albany
+Kalgoorlie–Boulder
+Devonport
+Mount Gambier
+Lismore
+Nelson Bay
+Maryborough
+Burnie–Wynyard
+Alice Springs
+Victor Harbor–Goolwa
+Taree
+Ballina
+Morisset–Cooranbong
+Armidale
+Goulburn
+Whyalla
+Gympie
+Forster–Tuncurry
+Echuca–Moama
+Griffith
+Grafton
+Wangaratta
+St Georges Basin–Sanctuary Point
+Yeppoon
+Mount Isa
+Murray Bridge
+Broken Hill
+Camden Haven
+Moe–Newborough
+Karratha
+Singleton
+Batemans Bay
+Horsham
+Port Lincoln
+Ulladulla
+Warwick
+Kempsey
+Bairnsdale
+Sale
+Broome
+Ulverstone
+Port Hedland
+Port Pirie
+Emerald
+Port Augusta
+Lithgow
+Colac
+Muswellbrook
+Esperance
+Mudgee
+Parkes
+Swan Hill
+Portland
+Kingaroy

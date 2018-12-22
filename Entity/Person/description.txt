@@ -1,0 +1,596 @@
+Honest, stout, love Mosquito
+Clever, slim, love Fly
+Confident, slim, love Papakeet
+Clever, fat, love Frog
+Sociable, overweight, love Cockatoo
+Aggressive, slim, love Ostrich
+Kind, fit, love Chihuahua
+Wise, stout, love Hare
+intelligent, slim, love Louse
+Enthusiastic, average built, love Lion
+Unkind, obese, love Horseshoe crab
+Rational, slender, love Locust
+Quiet, slim, love Cricket
+Confident, plump, love Hare
+Dependable, overweight, love Cicada
+Introverted, muscular, love Insect
+Reckless, well-proportioned figure, love Lemur
+Wise, overweight, love Grasshopper
+Kind, skinny, love Ass
+Gruff, well-proportioned figure, love Lion
+Dependable, plump, love Beetle
+Kind, average built, love Armadillo
+Talented, muscular, love Mussel
+Creative, well-built, love Armadillo
+Cautious, slim, love Jellyfish
+Out going, obese, love Orangutan
+Haughty, plump, love Eel
+Hot-temper, plump, love Goat
+Observant, stocky, love Buck
+Wise, fit, love Grasshopper
+Unkind, well-built, love Donkey
+Cold, well-built, love Bumble-bee
+Cheerful, well-proportioned figure, love Duck
+Competitive, fat, love Llama
+Unkind, frail, love Mantis
+Cheerful, stocky, love Chamois
+Talented, obese, love Cricket
+Understantding, average built, love Dove, pigeon
+Aggressive, overweight, love Crocodile
+Generous, fat, love Grasshopper
+Out going, muscular, love Lady bird
+Observant, well-proportioned figure, love Leopard
+Easy going, overweight, love Buck
+Stubborn, slim, love Foal
+Easy going, fat, love Peacock
+Cold, overweight, love Gerbil
+Patient, overweight, love Aligator
+Optimistic, frail, love Cobra
+Crazy, fit, love Aligator
+Hot-temper, slender, love Papakeet
+Impolite, muscular, love Leopard
+Haughty, slender, love Locust
+Cheerful, obese, love Dalmatian
+Funny, frail, love Lopster
+Careful, well-proportioned figure, love Octopus
+Mean, average built, love Bunny
+Wise, obese, love Gibbon
+Cruel, skinny, love Fiddler crab
+Gruff, plump, love Flea
+Insolent, stout, love Gannet
+Exciting, slender, love Peacock
+Patient, stout, love HummingBird
+Cruel, fat, love Octopus
+Rational, slim, love Chimpanzee
+Selfish, slim, love Centipede
+Bad-tempered, plump, love Gecko
+Insolent, fat, love Lady bird
+Kind, fit, love Canary
+Impolite, average built, love Bumble-bee
+Selfish, well-proportioned figure, love Giraffe
+Open-minded, slim, love Chameleon
+Funny, slim, love Gecko
+Understantding, fat, love Beaver
+Gentle, overweight, love Baboon
+Quiet, muscular, love Gannet
+Out going, obese, love Falcon
+Bad-tempered, stout, love Hippopotamus
+Hardworking, slender, love Dromedary
+Funny, skinny, love Gecko
+Unkind, muscular, love Peacock
+Haughty, fit, love Fawn
+Introverted, stout, love Camel
+Haughty, well-built, love Goat
+Soft, frail, love Butter-fly
+Exciting, slim, love Locust
+Soft, slender, love Orangutan
+Funny, frail, love HummingBird
+Shy, average built, love Mosquito
+Insolent, stocky, love Gibbon
+Patient, well-proportioned figure, love Cicada
+Serious, frail, love Baboon
+Bad-tempered, slim, love Locust
+Creative, skinny, love Locust
+Serious, fat, love Eagle
+Easy going, skinny, love Papakeet
+Talented, overweight, love Parrot
+Cruel, well-built, love Dove, pigeon
+Aggressive, stout, love Fox
+Crazy, slender, love Iguana
+Cheerful, average built, love Gopher
+Hardworking, well-built, love Lemur
+Sincere, fit, love Hippopotamus
+Faithful, well-proportioned figure, love Parrot
+Cold, slender, love Lion
+Hardworking, stocky, love Pangolin
+Extroverted, obese, love Llama
+Unkind, well-built, love Hare
+Hot-temper, obese, love Dalmatian
+Cold, overweight, love Carp
+Tacful, fat, love Hedgehog
+Mean, well-built, love Owl
+Imaginative, fit, love Dragon- fly
+Cheerful, well-built, love Falcon
+Funny, slim, love Peacock
+Careful, plump, love Baboon
+Selfish, overweight, love Orangutan
+Smart, slender, love Dalmatian
+Ambitious, muscular, love Boar
+Dependable, slender, love Hedgehog
+Enthusiastic, well-built, love Gannet
+Serious, stocky, love Mosquito
+Cruel, average built, love Horseshoe crab
+Pessimistic, obese, love Falcon
+Optimistic, obese, love Fox
+Impolite, average built, love Fawn
+Talented, plump, love Chipmunk
+Confident, well-proportioned figure, love Beaver
+Crazy, frail, love Goat
+Friendly, slim, love Dachshund
+Haughty, frail, love Beaver
+Soft, fit, love Kingfisher
+Kind, slim, love Gannet
+Dependable, skinny, love Carp
+Stubborn, slim, love Bumble-bee
+Stupid, average built, love Crocodile
+Open-minded, muscular, love Caterpillar
+Sincere, well-proportioned figure, love Gerbil
+Talented, muscular, love Cricket
+Serious, slim, love Bumble-bee
+Easy going, fat, love Lemur
+Selfish, obese, love Baboon
+Pessimistic, average built, love Pangolin
+Enthusiastic, overweight, love Dalmatian
+Bad-tempered, plump, love Greyhound
+Exciting, fat, love Gecko
+Cold, well-built, love Cricket
+Extroverted, slender, love Gerbil
+Patient, well-built, love Bat
+Out going, stout, love Hound
+Careful, skinny, love Chamois
+Cruel, muscular, love Panda
+Dependable, fit, love Fly
+Insolent, stout, love Chimpanzee
+Mad, stocky, love Chipmunk
+Bad-tempered, stocky, love Cricket
+Aggressive, fit, love Centipede
+Impolite, muscular, love Heron
+Rational, slim, love Gannet
+Introverted, overweight, love Lemur
+Stupid, frail, love Elephant
+Hardworking, stocky, love Mule
+Confident, overweight, love Fly
+Pessimistic, slender, love Chihuahua
+Aggressive, frail, love Heron
+Kind, frail, love Chihuahua
+Understantding, frail, love Chimpanzee
+Optimistic, fat, love Gopher
+Faithful, slender, love Pangolin
+Stubborn, skinny, love Elephant
+Clever, fit, love Gecko
+Kind, fit, love Ostrich
+intelligent, obese, love Chihuahua
+Bad-tempered, fat, love Giraffe
+Imaginative, plump, love Llama
+Faithful, fit, love Lopster
+Unkind, well-proportioned figure, love Beetle
+Hot-temper, average built, love Fire- fly
+Generous, fit, love Baboon
+Gentle, frail, love Carp
+Patient, average built, love Dromedary
+Humorous, fit, love Crane
+Faithful, well-built, love Fire- fly
+Stubborn, muscular, love Giraffe
+Understantding, skinny, love Pangolin
+Pessimistic, well-built, love Chimpanzee
+Selfish, frail, love Fly
+Bad-tempered, stocky, love HummingBird
+Extroverted, fit, love Dachshund
+Loyal, well-built, love Gerbil
+Easy going, plump, love Hawk
+Ambitious, skinny, love Hedgehog
+Kind, plump, love Leopard
+Observant, skinny, love Crane
+Careful, plump, love Hedgehog
+Insolent, average built, love Lemur
+Loyal, skinny, love Orangutan
+Stupid, obese, love Dragon- fly
+Serious, stocky, love Dragon- fly
+Ambitious, well-built, love Jellyfish
+Mad, well-proportioned figure, love Hedgehog
+Serious, muscular, love Hound
+Careful, slim, love Mosquito
+Easy going, fat, love Cockatoo
+Insolent, frail, love HummingBird
+Competitive, fat, love Carp
+Stubborn, well-proportioned figure, love Hyena
+Strict, stout, love Mule
+Kind, obese, love Mosquito
+Understantding, obese, love Cobra
+Clever, well-proportioned figure, love Hedgehog
+intelligent, obese, love Armadillo
+Extroverted, frail, love Falcon
+Patient, average built, love HummingBird
+Boast, muscular, love Foal
+Kind, slender, love Fawn
+Soft, fit, love Lady bird
+Shy, plump, love Centipede
+Haughty, frail, love Duck
+Cold, muscular, love Hedgehog
+Generous, fat, love Greyhound
+Strict, well-proportioned figure, love Nightingale
+Confident, slender, love Chimpanzee
+Haughty, stout, love Hare
+Boast, obese, love Beaver
+Friendly, slender, love Owl
+Exciting, stocky, love Hare
+Insolent, obese, love Mule
+Mad, slim, love Caterpillar
+Optimistic, fat, love Falcon
+Humorous, stout, love Gibbon
+Lazy, muscular, love Llama
+Clever, well-proportioned figure, love Moth
+Loyal, muscular, love Eel
+Cold, obese, love Foal
+Polite, frail, love Chipmunk
+Patient, plump, love Greyhound
+Polite, stocky, love Otter
+Hardworking, slim, love Centipede
+Aggressive, frail, love Cricket
+Polite, slender, love Dalmatian
+Aggressive, slender, love Buck
+Lazy, skinny, love Donkey
+Kind, stocky, love Hyena
+Gruff, average built, love Hawk
+Faithful, slender, love Baboon
+Kind, stout, love Otter
+Out going, muscular, love Insect
+Optimistic, stout, love Kingfisher
+Faithful, well-built, love Boar
+Smart, frail, love Mosquito
+Serious, stocky, love Greyhound
+Cruel, frail, love Gibbon
+Unkind, slim, love Peacock
+Dependable, slender, love Bumble-bee
+intelligent, average built, love Gannet
+Confident, well-proportioned figure, love Hound
+Pessimistic, stout, love Fawn
+Aggressive, fit, love Carp
+Sincere, slim, love Panda
+Friendly, overweight, love Dromedary
+Wise, well-proportioned figure, love Otter
+Open-minded, fit, love Cricket
+Rational, overweight, love Fox
+Wise, slender, love Gibbon
+Impolite, overweight, love Chimpanzee
+Pessimistic, well-built, love Orangutan
+Polite, slender, love Lady bird
+Polite, slender, love Canary
+Unpleasant, obese, love Aligator
+Generous, obese, love Iguana
+Boast, average built, love Crocodile
+Shy, well-proportioned figure, love Lamp
+intelligent, slender, love Duck
+Introverted, skinny, love Pangolin
+Insolent, stocky, love Insect
+Faithful, frail, love Owl
+Aggressive, fat, love Giraffe
+Aggressive, plump, love Lady bird
+Careful, fit, love Moth
+Enthusiastic, frail, love Gannet
+Loyal, slender, love Panda
+Smart, fit, love Boar
+Hot-temper, stocky, love Camel
+Sociable, well-proportioned figure, love Mule
+Mean, muscular, love Goat
+Humorous, well-built, love Gibbon
+Patient, fit, love Jellyfish
+Generous, well-built, love Fire- fly
+Crazy, stout, love Insect
+Extroverted, well-proportioned figure, love Beaver
+Loyal, stout, love Insect
+Wise, plump, love Fawn
+Boring, average built, love Armadillo
+Cruel, muscular, love Armadillo
+Impolite, slim, love Mosquito
+Exciting, stout, love Gecko
+Imaginative, fat, love Pangolin
+Hardworking, well-built, love Grasshopper
+Unkind, stocky, love Buck
+Gruff, well-built, love Orangutan
+Crazy, stocky, love Hedgehog
+Enthusiastic, well-built, love Baboon
+Tacful, overweight, love Gecko
+Soft, muscular, love Iguana
+Boast, muscular, love Dachshund
+Gruff, stout, love Bumble-bee
+Stubborn, well-proportioned figure, love Ostrich
+Funny, obese, love Owl
+Open-minded, fit, love Fly
+Tacful, slender, love Dromedary
+intelligent, slender, love Insect
+Stupid, plump, love Hound
+Observant, muscular, love Gopher
+Cruel, average built, love Parrot
+Generous, muscular, love Aligator
+Talented, muscular, love Armadillo
+Mean, frail, love Chipmunk
+Quiet, fat, love Lady bird
+Confident, fit, love Parrot
+Lazy, slim, love Lopster
+Quiet, plump, love Butter-fly
+Lazy, stocky, love Baboon
+Cautious, fat, love Camel
+Unkind, stocky, love Fox
+Patient, overweight, love Falcon
+Understantding, muscular, love Aligator
+Stubborn, overweight, love Nightingale
+Selfish, plump, love Butter-fly
+Unkind, muscular, love Flea
+Boring, well-built, love Horseshoe crab
+Soft, slender, love Chamois
+Shy, skinny, love Lemur
+Strict, average built, love Dromedary
+Polite, average built, love Chamois
+Talkative, obese, love Hare
+Selfish, average built, love Bat
+Out going, slim, love Eagle
+Sincere, obese, love Mule
+Honest, plump, love Camel
+Smart, frail, love Gannet
+Crazy, skinny, love Armadillo
+Patient, overweight, love Horseshoe crab
+Hardworking, skinny, love Eagle
+Sociable, fat, love Chameleon
+Sincere, frail, love Parrot
+Open-minded, well-proportioned figure, love Hind
+Shy, plump, love Llama
+Stubborn, fat, love Grasshopper
+Talented, muscular, love Gopher
+Reckless, stocky, love Hind
+Soft, fit, love Lemur
+Soft, fat, love Chamois
+Polite, stout, love Cobra
+Creative, stocky, love Centipede
+Hardworking, stout, love Dragon- fly
+Lazy, stout, love Peacock
+Unkind, skinny, love Baboon
+Confident, stocky, love Bumble-bee
+Serious, well-proportioned figure, love Mantis
+Mean, well-built, love Heron
+Crazy, skinny, love Gerbil
+Exciting, skinny, love Locust
+Extroverted, fit, love Lamp
+Aggressive, overweight, love Lopster
+Talented, fat, love Eel
+Careful, fit, love Aligator
+Polite, skinny, love Chimpanzee
+Unkind, plump, love Canary
+Imaginative, frail, love Locust
+Generous, frail, love Lady bird
+Funny, fit, love Octopus
+Mean, frail, love Jellyfish
+Mean, slender, love Mule
+Gruff, stout, love Fawn
+Humorous, plump, love Hedgehog
+Insolent, plump, love Foal
+Introverted, overweight, love Eagle
+Dependable, skinny, love Octopus
+Soft, fit, love Locust
+Friendly, skinny, love Fox
+Introverted, frail, love Insect
+intelligent, obese, love Fly
+Insolent, obese, love Gopher
+Cheerful, plump, love Centipede
+Careless, well-proportioned figure, love Crane
+Reckless, skinny, love Jellyfish
+Aggressive, overweight, love Owl
+Cold, muscular, love Crane
+Lazy, skinny, love Gopher
+Boast, slender, love Octopus
+Hardworking, muscular, love Dromedary
+Quiet, obese, love Chipmunk
+Honest, muscular, love Camel
+Faithful, well-proportioned figure, love Insect
+Honest, well-built, love Chamois
+Sincere, average built, love Horseshoe crab
+Reckless, muscular, love Anteater
+Sincere, obese, love Hound
+Impolite, muscular, love Hare
+Haughty, skinny, love Gecko
+intelligent, average built, love Dachshund
+Lazy, overweight, love Buck
+Crazy, slim, love Camel
+Competitive, stocky, love Kingfisher
+Rational, skinny, love Otter
+Clever, stout, love Blackbird
+Patient, average built, love Fox
+Boring, frail, love Beetle
+Honest, muscular, love Chihuahua
+Loyal, stout, love Buck
+Optimistic, slender, love Blackbird
+Talented, stout, love Beetle
+Talented, well-proportioned figure, love Moth
+Cheerful, slender, love Leopard
+Mean, frail, love Hound
+intelligent, muscular, love Chipmunk
+intelligent, overweight, love Kingfisher
+Clever, plump, love Hyena
+Stupid, well-proportioned figure, love Gopher
+Boast, fit, love Hound
+Crazy, muscular, love Hyena
+Faithful, stout, love Fiddler crab
+Understantding, stocky, love Gibbon
+Friendly, slender, love Gannet
+Reckless, skinny, love Crane
+Patient, muscular, love Buck
+Mean, stocky, love Dove, pigeon
+Gentle, overweight, love Locust
+Stupid, frail, love Iguana
+Strict, muscular, love Goat
+Wise, well-built, love Fly
+Kind, well-built, love Cicada
+Serious, overweight, love Lady bird
+Observant, obese, love Lion
+Exciting, muscular, love Beetle
+Strict, obese, love Chamois
+Understantding, slim, love Papakeet
+Careful, average built, love Camel
+Shy, average built, love Octopus
+Mad, overweight, love Chipmunk
+Creative, slim, love Bumble-bee
+Confident, average built, love Insect
+Cautious, slender, love Cricket
+Patient, muscular, love Hare
+Smart, well-built, love Aligator
+Cautious, obese, love Caterpillar
+Lazy, muscular, love Locust
+Hardworking, fat, love Eagle
+Hardworking, well-proportioned figure, love Boar
+Easy going, overweight, love Dragon- fly
+Creative, stocky, love Gannet
+Talented, plump, love Parrot
+Patient, well-proportioned figure, love Bumble-bee
+Mad, frail, love Papakeet
+Stupid, fit, love Owl
+Observant, muscular, love Otter
+Careless, well-built, love Otter
+Competitive, stocky, love Hind
+Quiet, average built, love Owl
+Ambitious, slim, love Papakeet
+Sincere, well-proportioned figure, love Cobra
+Lazy, slender, love Hawk
+Aggressive, muscular, love Chipmunk
+Careful, overweight, love Duck
+Polite, slender, love Pangolin
+Lazy, plump, love Lopster
+Careful, slim, love Louse
+Boring, slender, love Goat
+Crazy, plump, love Mule
+Aggressive, muscular, love Orangutan
+Clever, overweight, love Chihuahua
+Imaginative, well-built, love Horseshoe crab
+Gentle, slender, love Cicada
+Serious, slim, love Hind
+Cheerful, plump, love Heron
+Cheerful, stocky, love Duck
+Confident, obese, love Hawk
+Cold, stout, love Hyena
+Stubborn, slim, love Cobra
+Mean, well-built, love Louse
+Patient, slender, love Horseshoe crab
+Strict, muscular, love Pangolin
+Faithful, fat, love Mosquito
+Cruel, stocky, love Cock roach
+Sincere, well-built, love Hawk
+Quiet, average built, love Eel
+Insolent, slim, love Horseshoe crab
+Hot-temper, stocky, love Crocodile
+Careless, plump, love Blackbird
+Aggressive, average built, love Hound
+Friendly, stocky, love Caterpillar
+Out going, plump, love Beetle
+Hardworking, well-proportioned figure, love Bunny
+Dependable, plump, love Hind
+Boast, skinny, love Peacock
+Serious, plump, love Locust
+Kind, stocky, love Chamois
+Lazy, overweight, love Ass
+Unpleasant, skinny, love Jellyfish
+Soft, slim, love Lady bird
+Sincere, average built, love Chipmunk
+Ambitious, average built, love Armadillo
+Selfish, slim, love Hyena
+Clever, fat, love Giraffe
+Competitive, obese, love Cricket
+Faithful, slim, love Duck
+Gentle, slender, love Crane
+Faithful, fat, love Crane
+Stupid, slender, love Cock roach
+Loyal, well-proportioned figure, love Armadillo
+Careful, plump, love Parrot
+Clever, average built, love Gannet
+Soft, fat, love Mule
+Crazy, stocky, love Goat
+Strict, stout, love Aligator
+Clever, well-built, love Parrot
+Soft, well-proportioned figure, love Foal
+Reckless, plump, love Peacock
+Ambitious, stocky, love Gecko
+Friendly, stocky, love Horseshoe crab
+Kind, stout, love Hare
+Funny, fat, love Bumble-bee
+Understantding, average built, love Ostrich
+intelligent, fat, love Peacock
+Pessimistic, obese, love Cock roach
+Dependable, slim, love Cockatoo
+Talented, slender, love Insect
+Impolite, plump, love Fawn
+Kind, plump, love Octopus
+Pessimistic, stocky, love Bunny
+Competitive, stout, love Dragon- fly
+Faithful, plump, love Goat
+Strict, average built, love Caterpillar
+Stupid, obese, love Falcon
+Cheerful, skinny, love Peacock
+Generous, obese, love Beetle
+Imaginative, stocky, love Lemur
+Careful, well-proportioned figure, love Donkey
+Out going, stocky, love HummingBird
+Clever, well-built, love Chipmunk
+Reckless, slender, love HummingBird
+Faithful, skinny, love Lemur
+Talkative, slim, love Dachshund
+Bad-tempered, average built, love Hare
+Serious, obese, love Insect
+Enthusiastic, average built, love Foal
+Understantding, stout, love Bunny
+Boast, overweight, love Owl
+Shy, stout, love Crocodile
+Rational, stocky, love Foal
+Cold, well-built, love Fire- fly
+Friendly, frail, love Dachshund
+Insolent, fit, love Hound
+Aggressive, overweight, love Armadillo
+Sincere, well-built, love Ass
+Unkind, fit, love Hound
+Hardworking, slender, love Dove, pigeon
+Imaginative, frail, love Lamp
+Soft, stout, love Gerbil
+Talkative, slim, love Gerbil
+Out going, plump, love Hedgehog
+Careless, fat, love Ostrich
+Polite, obese, love Duck
+Loyal, frail, love Hawk
+Funny, frail, love Octopus
+Enthusiastic, slender, love Dromedary
+Optimistic, well-proportioned figure, love Anteater
+Polite, average built, love Panda
+Competitive, well-proportioned figure, love Crane
+Strict, well-built, love Cobra
+Lazy, overweight, love Pangolin
+Friendly, plump, love Chihuahua
+Generous, fat, love Moth
+Humorous, plump, love Canary
+Selfish, well-proportioned figure, love Insect
+Loyal, muscular, love Canary
+Cruel, frail, love Mantis
+Stubborn, stout, love Pangolin
+Cold, skinny, love Lamp
+Serious, average built, love Cricket
+Open-minded, fit, love Cobra
+Shy, fit, love Gibbon
+Clever, well-proportioned figure, love Beetle
+Dependable, slender, love Chipmunk
+Extroverted, frail, love Boar
+Loyal, skinny, love Papakeet
+Unkind, well-built, love Papakeet
+Aggressive, frail, love Fiddler crab
+Shy, well-proportioned figure, love Papakeet
+Generous, well-proportioned figure, love Gerbil
+Talkative, obese, love Chipmunk
+Aggressive, muscular, love Llama
+Soft, slender, love Elephant
+Easy going, stout, love Eagle
+Kind, stout, love Camel
+Honest, slender, love Crane

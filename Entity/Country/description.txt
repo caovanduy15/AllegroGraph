@@ -1,0 +1,24 @@
+on east Asia
+on east Europe
+on east North America
+on east South America
+on east Australia
+on east Africa
+on west Asia
+on west Europe
+on west North America
+on west South America
+on west Australia
+on west Africa
+on south Asia
+on south Europe
+on south North America
+on south South America
+on south Australia
+on south Africa
+on north Asia
+on north Europe
+on north North America
+on north South America
+on north Australia
+on north Africa

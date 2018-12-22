@@ -1,0 +1,38 @@
+# Emacs
+*~
+# IntelliJ
+.idea/
+*.iml
+bin
+# Temporary Maven repo created to compile the tutorials
+/repo
+.*sw*
+*.class
+classes
+*.jar
+*.tar.gz
+DIST
+/build.out
+/doc
+temp.*
+tmp
+# target is where maven stores all output, we do not want these.
+# NOTE: No /, we don't want target dirs from subprojects either.
+target
+# Generated file.
+/test-release/pom.xml
+# Stuff created when running the tutorial.
+JenaTutorialExamples.*.nt
+JenaTutorialExamples.*.rdf
+TutorialExamples.*.nt
+TutorialExamples.*.rdf
+phase-[0-6].ds
+phase-[0-6].nmon
+phase-[0-6].vm
+# Stuff created when running the 2pc tutorial.
+/tutorials/2pc/derby.log
+/tutorials/2pc/test-2pc
+/tutorials/2pc/tmlog*.log
+# IntelliJ asciidoc previewer seems to generate this
+/README.html
+
