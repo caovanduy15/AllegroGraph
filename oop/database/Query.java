@@ -3,31 +3,12 @@ package database;
 
 import org.eclipse.rdf4j.query.TupleQueryResult;
 
-
-import com.franz.agraph.repository.*;
-
-
-/**
- * 10 Base Query:
- * searchNameByLabel
- * searchNameByTimeGetLink
- * searchNameByLink
- * searchPersonNameByPosition
- * searchInforByName
- * searchLabelByName
- * searchDescriptionByName
- * searchLinkByName
- * searchTimeGetLinkByName
- * listTypeName
- */
-
+import com.franz.agraph.repository.AGQueryLanguage;
+import com.franz.agraph.repository.AGRepositoryConnection;
+import com.franz.agraph.repository.AGTupleQuery;
 
 
 public class Query extends Utility{
-	
-	private final String ontology = InsertTriples.ontology;
-	private final String relation = InsertTriples.relation;
-
 	
 	private String inputName;
 	private String inputLabel;
@@ -35,9 +16,14 @@ public class Query extends Utility{
 	private String inputLink;
 	private String queryString;
 	private String type;
+	private String position;
 	
 	public Query() {
 		super();
+	}
+	
+	public Query(AGRepositoryConnection conn) {
+		super(conn);
 	}
 	
 
@@ -56,8 +42,6 @@ public class Query extends Utility{
 	public void setInputLabel(String inputLabel) {
 		this.inputLabel = inputLabel;
 	}
-
-	
 
 	public String getInputTimeGetLink() {
 		return inputTimeGetLink;
@@ -88,8 +72,8 @@ public class Query extends Utility{
 	
 
 	public String getType() {
-			return type;
-		}
+		return type;
+	}
 
 
 	public void setType(char type) {
@@ -116,6 +100,10 @@ public class Query extends Utility{
 			break;
 		}
 	}
+	
+	public void setposition(String position) {
+		this.position = position;
+	}
 
 	/**
 	 * 10 Base Query:
@@ -128,235 +116,177 @@ public class Query extends Utility{
 	 * searchDescriptionByName
 	 * searchLinkByName
 	 * searchTimeGetLinkByName
-	 * listTypeName
+	 * searchNameByType
 	 */
-
-	public void searchNameByLabel(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	
+	public void searchNameByLabel(AGRepositoryConnection conn) throws Exception { 
 		String query = 
-				"SELECT  ?name \n" + 
-				"WHERE {?IRI ontology:label \""+getInputLabel()+"\"."+
-						"?IRI ontology:name ?name} " ;		
+				"SELECT  ?name  WHERE {"
+					+ "?s ontology:label \""+getInputLabel()+"\"."
+					+ "?s ontology:name ?name"
+				+ "}" ;		
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchNameByTimeGetLink(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	public void searchNameByTimeGetLink(AGRepositoryConnection conn) throws Exception { 
 		String query = 
-				"SELECT  ?name \n" + 
-				"WHERE {?IRI ontology:timeGetLink \""+getInputTimeGetLink()+"\"."+
-						"?IRI ontology:name ?name} " ;		
+				"SELECT  ?name WHERE {"
+					+ "?s ontology:timeGetLink \""+getInputTimeGetLink()+"\"."
+					+ "?s ontology:name ?name"
+				+ "}" ;		
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchNameByLink(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	public void searchNameByLink(AGRepositoryConnection conn) throws Exception { 
 		String query = 
-				"SELECT  ?name \n" + 
-				"WHERE {?IRI ontology:link \""+getInputLink()+"\"."+
-						"?IRI ontology:name ?name} " ;		
+				"SELECT  ?name WHERE {" 
+					+ "?s ontology:link \""+getInputLink()+"\"."
+					+ "?s ontology:name ?name"
+				+ "}";		
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchPersonNameByPosition(String CatalogID, String RepositoryID,String Position) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	public void searchPersonNameByPosition(AGRepositoryConnection conn) throws Exception { 
 		String query = 
-				"SELECT  ?name \n" + 
-				"WHERE {?IRI ontology:position \""+Position+"\"."+
-						"?IRI ontology:name ?name} " ;		
+				"SELECT  ?name WHERE {"
+					+ "?s ontology:position \""+position+"\"."
+					+ "?s ontology:name ?name"
+				+ "}";	
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchBaseInforByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-			query=	"SELECT ?label ?type ?description ?link ?timeGetLink ?position \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI ontology:label ?label .\n"+
-							"?IRI ontology:description ?description .\n"+
-							"?IRI rdf:type ?type ."+
-							"?IRI ontology:link ?link .\n"+
-							"?IRI ontology:timeGetLink ?timeGetLink \n"+
-							 " } " ;
+	public void searchBaseInforByName(AGRepositoryConnection conn) throws Exception { 
+		String query =	
+				"SELECT ?label ?type ?description ?link ?timeGetLink WHERE {" 
+					+ "?s ontology:name \""+getInputName()+"\"."
+					+ "?s ontology:label ?label ."
+					+ "?s ontology:description ?description ."
+					+ "?s rdf:type ?type ."
+					+ "?s ontology:link ?link ."
+					+ "?s ontology:timeGetLink ?timeGetLink"
+				+ "}";
 			
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchLabelByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-		
-			query=	"SELECT  ?label \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI ontology:label ?label .\n"+
-							 "} " ;
+	public void searchLabelByName(AGRepositoryConnection conn) throws Exception { 
+		String query =	
+				"SELECT  ?label WHERE {"
+				+	"?s ontology:name \""+getInputName()+"\"."
+				+	"?s ontology:label ?label ."
+				+ "}";
 
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchDescriptionByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-		
-			query=	"SELECT  ?description  \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI ontology:description ?description .\n"+
-							 "} " ;
+	public void searchDescriptionByName(AGRepositoryConnection conn) throws Exception {	
+		String query =	
+				"SELECT  ?description WHERE {"
+				+	"?s ontology:name \""+getInputName()+"\"."
+				+	"?s ontology:description ?description ."
+				+ "}";
 
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchLinkByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-		
-			query=	"SELECT  ?link  \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI ontology:link ?link .\n"+
-							 "} " ;
+	public void searchLinkByName(AGRepositoryConnection conn) throws Exception { 
+		String query=	
+				"SELECT  ?link  WHERE {"
+				+	"?s ontology:name \""+getInputName()+"\"."
+				+	"?s ontology:link ?link ."
+				+ "}";
 
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchTimeGetLinkByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-		
-			query=	"SELECT  ?timeGetLink  \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI ontology:timeGetLink ?timeGetLink .\n"+
-							 "} " ;
-
+	public void searchTimeGetLinkByName(AGRepositoryConnection conn) throws Exception { 
+			String query=	
+					"SELECT  ?timeGetLink WHERE {"
+						+ "?s ontology:name \""+getInputName()+"\"."
+						+ "?s ontology:timeGetLink ?timeGetLink ."
+					+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void searchTypeByName(String CatalogID, String RepositoryID) throws Exception { 
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		String query = new String();
-		
-			query=	"SELECT  ?type  \n" + 
-					"WHERE {?IRI ontology:name \""+getInputName()+"\".\n"+
-							"?IRI rdf:type ?type .\n"+
-							 "} " ;
-
+	public void searchTypeByName(AGRepositoryConnection conn) throws Exception { 
+			String query =	
+				"SELECT  ?type WHERE {"
+				+	"?s ontology:name \""+getInputName()+"\"."
+				+	"?s rdf:type ?type ."
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
-	public void listTypeName(String CatalogID, String RepositoryID) throws Exception {
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	public void searchNameByType(AGRepositoryConnection conn) throws Exception {
 		String query = 
-				"SELECT ?name \n"+
-				"WHERE { ?IRI rdf:type ontology:"+type+". \n"+
-				"?IRI ontology:name ?name }";
+				"SELECT ?name WHERE {"
+					+ "?s rdf:type ontology:"+type+"."
+					+ "?s ontology:name ?name "
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
-		
 	}
 	
 	/**
 	 * High Query 1: Cao Van Duy meet who in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery1(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery1(AGRepositoryConnection conn) throws Exception {
 		println("High Query 1: Cao Van Duy meet who in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?name ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI relation:meet ?IRI1. \n"+
-				"?IRI1 ontology:label ?name .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?name ?labelTime WHERE {"
+					+ "?s relation:meet ?o."
+					+ "?s ontology:label \"Cao Van Duy\"."
+					+ "?o ontology:label ?name ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime."
+					+ "filter contains(str(?labelTime), str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 2: Cao Van Duy go where (e,c,l) in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery2(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery2(AGRepositoryConnection conn) throws Exception {
 		println("High Query 2: Cao Van Duy go where (e,c,l) in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?where ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI relation:go ?IRI1. \n"+
-				"?IRI1 ontology:label ?where .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?where ?labelTime WHERE {"
+					+ "?s relation:go ?o."
+					+ "?s ontology:label \"Cao Van Duy\"."
+					+ "?o ontology:label ?where ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime."
+					+ "filter contains(str(?labelTime), str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 3: What event does Cao Van Duy organize in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery3(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery3(AGRepositoryConnection conn) throws Exception {
 		println("High Query 3: What event does Cao Van Duy organize in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?relation ?name ?labelTime \n"+
-				"WHERE { "+
-				"?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI ontology:organize ?eIRI. \n"+
-				"?eIRI ontology:label ?name . \n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"FILTER contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?relation ?name ?labelTime WHERE {"
+					+ "?s ontology:organize ?o."
+					+ "?s ontology:label \"Cao Van Duy\"."
+					+ "?o ontology:label ?name ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime."
+					+ "FILTER contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
@@ -367,20 +297,16 @@ public class Query extends Utility{
 	 * @param RepositoryID
 	 * @throws Exception
 	 */
-	public void HighQuery4(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery4(AGRepositoryConnection conn) throws Exception {
 		println("High Query 4: What Event does Cao Van Duy state in 2018");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?name ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI relation:state ?eIRI. \n"+
-				"?eIRI ontology:label ?name .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
+				"SELECT ?name ?labelTime WHERE {"+
+					"?s ontology:label \"Cao Van Duy\"."+
+					"?s relation:state ?o."+
+					"?o ontology:label ?name ."+
+					"?s relation:when ?timeID ."+
+					"?timeID ontology:label ?labelTime ."+
+					"filter contains(str(?labelTime),str(2018))"+
 				"}";
 		setQueryString(query);
 		executeQuery(conn);
@@ -392,172 +318,135 @@ public class Query extends Utility{
 	 * @param RepositoryID
 	 * @throws Exception
 	 */
-	public void HighQuery5(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery5(AGRepositoryConnection conn) throws Exception {
 		println("High Query 5: Cao Van Duy travel where (c,l) in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?where ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI relation:travel ?IRI1. \n"+
-				"?IRI1 ontology:label ?where .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?where ?labelTime WHERE {"
+					+ "?IRI ontology:label \"Cao Van Duy\"."
+					+ "?IRI relation:travel ?IRI1."
+					+ "?IRI1 ontology:label ?where ."
+					+ "?IRI relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 6: Cao Van Duy stay where (c,l) in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery6(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery6(AGRepositoryConnection conn) throws Exception {
 		println("High Query 6: Cao Van Duy stay where (c,l) in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?where ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-				"?IRI relation:stay ?IRI1. \n"+
-				"?IRI1 ontology:label ?where .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?where ?labelTime WHERE {"
+					+ "?s relation:stay ?o."
+					+ "?s ontology:label \"Cao Van Duy\"."
+					+ "?o ontology:label ?where ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 7: Vietnam join Event in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery7(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery7(AGRepositoryConnection conn) throws Exception {
 		println("High Query 7: Vietnam join Event in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?name ?labelTime \n"+
-						"WHERE { ?IRI ontology:label \"VietNam\". \n"+
-						"?IRI relation:join ?eIRI. \n"+
-						"?eIRI ontology:label ?name .\n"+
-						"?IRI relation:when ?timeID .\n"+
-						"?timeID ontology:label ?labelTime \n"+
-						"filter contains(str(?labelTime),str(2018))"+
-						"}";
+				"SELECT ?name ?labelTime WHERE {"
+					+ "?s relation:join ?o. "
+					+ "?s ontology:label \"VietNam\"."
+					+ "?o ontology:label ?name ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 8: Cao Van Duy join Country in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery8(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery8(AGRepositoryConnection conn) throws Exception {
 		println("High Query 8: Cao Van Duy join Organization in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?name ?labelTime \n"+
-						"WHERE { ?IRI ontology:label \"Cao Van Duy\". \n"+
-						"?IRI relation:join ?oIRI. \n"+
-						"?oIRI ontology:label ?name .\n"+
-						"?IRI relation:when ?timeID .\n"+
-						"?timeID ontology:label ?labelTime \n"+
-						"filter contains(str(?labelTime),str(2018))"+
-						"}";
+				"SELECT ?name ?labelTime WHERE {"
+					+ "?s relation:join ?o."
+					+ "?s ontology:label \"Cao Van Duy\"."
+					+ "?o ontology:label ?name ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
 	 * High Query 9: Vietnam negotiate Country in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
 	 */
-	public void HighQuery9(String CatalogID, String RepositoryID) throws Exception {
+	public void HighQuery9(AGRepositoryConnection conn) throws Exception {
 		println("High Query 9: What event does happen Vietnam in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
 		String query = 
-				"SELECT ?event ?labelTime \n"+
-				"WHERE { "+
-				"?IRI relation:happen ?IRIc. \n"+
-				"?IRIc ontology:label \"Vietnam\" ."+
-				"?IRI ontology:label ?event .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?event ?labelTime WHERE {"
+					+ "?s relation:happen ?o. "
+					+ "?o ontology:label \"Vietnam\" ."
+					+ "?s ontology:label ?event ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	/**
-	 * High Query 10: Microsoft Corporation organize Event in 2018
-	 * @param CatalogID
-	 * @param RepositoryID
-	 * @throws Exception
+	 * High Query 10: DH Bach Khoa organize Event in 2018
 	 */
-	public void HighQuery10(String CatalogID, String RepositoryID) throws Exception {
-		println("High Query 10: Microsoft Corporation organize Event in 2018 ??");
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-		conn.setNamespace("relation", relation);
+	public void HighQuery10(AGRepositoryConnection conn) throws Exception {
+		println("High Query 10: DH Bach Khoa organize Event in 2018 ??");
 		String query = 
-				"SELECT ?event ?labelTime \n"+
-				"WHERE { ?IRI ontology:label \"Microsoft Corporation\". \n"+
-				"?IRI relation:organize ?IRI1. \n"+
-				"?IRI1 rdf:type ontology:Event ."+
-				"?IRI1 ontology:label ?event .\n"+
-				"?IRI relation:when ?timeID .\n"+
-				"?timeID ontology:label ?labelTime \n"+
-				"filter contains(str(?labelTime),str(2018))"+
-				"}";
+				"SELECT ?event ?labelTime WHERE {"
+					+ "?s relation:organize ?o. "
+					+ "?s ontology:label \"DH Bach Khoa\". "
+					+ "?o rdf:type ontology:Event ."
+					+ "?o ontology:label ?event ."
+					+ "?s relation:when ?timeID ."
+					+ "?timeID ontology:label ?labelTime ."
+					+ "filter contains(str(?labelTime),str(2018))"
+				+ "}";
 		setQueryString(query);
 		executeQuery(conn);
 	}
 	
 	public static void main(String[] args) throws Exception {
-		Query q = new Query();
-//		q.countRelation("/", "OOP");
-//		q.countEntity("/", "OOP");
-		q.setInputLabel("Vietnam");
-//		q.searchNameByLabel("/", "OOP");
-		q.setInputName("Vietnam595073");
+		ConnectAG_Server connect = new ConnectAG_Server();
+		AGRepositoryConnection conn = connect.connectRepository("/", "duy", false);
+		Query q = new Query(conn);
+//		q.countRelation(conn);
+//		q.countEntity(conn);
+//		q.setInputLabel("Cao Van Duy");
+//		q.searchNameByLabel(conn);
+		q.setInputName("Cao Van Duy575440");
 //		q.setType('p');
-//		q.HighQuery1("/", "OOP");
-//		q.searchTypeByName("/", "OOP");
-//		q.searchPersonNameByPosition("/", "OOP", "builder");
-		q.searchBaseInforByName("/", "OOP");
-//		q.searchDescriptionByName("/", "OOP");
-//		q.listTypeName("/", "OOP");
-//		q.countEntity("/", "OOP");
-//		char arr[] = {'p','o','c','l','t','e'};
-//		for (char i:arr) {
-//			q.setType(i);
-//			q.countType("/", "OOP");
-//		};
+		q.HighQuery1(conn);
+//		q.searchTypeByName(conn);
+//		q.setposition("builder");
+//		q.searchPersonNameByPosition(conn);
+		q.searchBaseInforByName(conn);
+		q.searchDescriptionByName(conn);
+		q.searchNameByType(conn);
+		q.countEntity(conn);
+		char arr[] = {'p','o','c','l','t','e'};
+		for (char i:arr) {
+			q.setType(i);
+			q.countType(conn);
+		};
 	}
 	
 	public void executeQuery(AGRepositoryConnection conn) throws Exception {
@@ -568,22 +457,16 @@ public class Query extends Utility{
 		println(tupleQuery.count()+ " Result(s)");
 	}
 	
-	public void countEntity(String CatalogID, String RepositoryID) {
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
+	public void countEntity(AGRepositoryConnection conn) {
 		String query = 
-				"SELECT  ?s ?y \n" + 
+				"SELECT  ?s ?y" + 
 				"WHERE {?s ontology:name ?y} " ;		
 		setQueryString(query);
 		AGTupleQuery tupleQuery = conn.prepareTupleQuery(AGQueryLanguage.SPARQL, queryString);
 		println(tupleQuery.count()+ " Entities");
 	}
 	
-	public void countRelation(String CatalogID, String RepositoryID) {
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("relation", relation);
+	public void countRelation(AGRepositoryConnection conn) {
 //	      IRI meet  // p-p relation gặp 
 //		  IRI organize // o-e relation tổ chức
 //		  IRI state  // p-e relation phát biểu
@@ -591,15 +474,10 @@ public class Query extends Utility{
 //		  IRI stay // p-l,c relation ở 
 //		  IRI travel // p-l,c relation thăm quan
 //		  IRI join // p-e,o relation  tham gia
-//		  IRI employee  // p-o relation nhân viên
-//		  IRI advocate // p-c relation ủng hộ, đồng tình
-//		  IRI counter // p-c relation phản đối
-//		  IRI co_oparate // c-c, o-o relation hợp tác
-//		  IRI compete // c-c, o-o relation cạnh tranh
-//		  IRI negotiate // c-c, o-o relation đàm phán
-//		      happen
+//		  IRI happen
+//		  IRI when
 		String query = 
-				"SELECT  * \n" + 
+				"SELECT  * " + 
 				"WHERE {{?s1 relation:when ?y1 .} UNION "+
 				"{?s11 relation:meet ?y11 .} UNION "+
 				"{?s12 relation:organize ?y12 .} UNION "+
@@ -608,29 +486,20 @@ public class Query extends Utility{
 				"{?s15 relation:stay ?y15 .} UNION "+
 				"{?s16 relation:travel ?y16.} UNION "+
 				"{?s17 relation:join ?y17 .} UNION "+
-				"{?s18 relation:employee ?y18 .} UNION "+
-				"{?s19 relation:advocate ?y19 .} UNION "+
-				"{?s110 relation:counter ?y110 .} UNION "+
-				"{?s111 relation:co_oparate ?y111 .} UNION "+
-				"{?s112 relation:compete ?y112 .} UNION "+
-				"{?s113 relation:negotiate ?y113 .} UNION "+
 				"{?s114 relation:happen ?y114 .}} ";	
 		setQueryString(query);
 		AGTupleQuery tupleQuery = conn.prepareTupleQuery(AGQueryLanguage.SPARQL, queryString);
 		println(tupleQuery.count()+ " Relations");
 	}
 	
-	public void countType(String CatalogID, String RepositoryID) {
-		ConnectAG_Server connect = new ConnectAG_Server();
-		AGRepositoryConnection conn = connect.connectRepository(CatalogID, RepositoryID, false);
-		conn.setNamespace("ontology", ontology);
-
+	public void countType(AGRepositoryConnection conn) {
 		String query = 
-				"SELECT  ?s ?y \n" + 				
-				"WHERE {?s rdf:type ontology:"+getType()+" .\n"
-				+ "?s ontology:name ?y} " ;		
+				"SELECT  ?s ?y WHERE {" 				
+					+ "?s rdf:type ontology:"+getType()+" ."
+					+ "?s ontology:name ?y"
+				+ "}" ;		
 		setQueryString(query);
 		AGTupleQuery tupleQuery = conn.prepareTupleQuery(AGQueryLanguage.SPARQL, queryString);
-		println("Count the "+ getType() +" :" +tupleQuery.count() );
+		println("Count the "+ getType() +": " +tupleQuery.count() );
 	}
 }

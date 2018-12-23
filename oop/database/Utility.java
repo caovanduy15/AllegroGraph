@@ -8,7 +8,22 @@ import org.eclipse.rdf4j.query.TupleQueryResult;
 import org.eclipse.rdf4j.repository.RepositoryConnection;
 import org.eclipse.rdf4j.repository.RepositoryResult;
 
+import com.franz.agraph.repository.AGRepositoryConnection;
+
 public class Utility {
+	
+	static final String ontology = "http://example.org/ontology/";
+	static final String relation = ontology+"Relation/";
+	
+	public Utility() {
+		
+	}
+	
+	public Utility(AGRepositoryConnection conn) {
+		conn.setNamespace("ontology", ontology);
+		conn.setNamespace("relation", relation);
+	}
+	
 	public  void println(Object x) {
         System.out.println(x);
     }

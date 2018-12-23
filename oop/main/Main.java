@@ -2,6 +2,8 @@ package main;
 
 import java.util.Scanner;
 
+import com.franz.agraph.repository.AGRepositoryConnection;
+
 import database.ConnectAG_Server;
 import database.InsertTriples;
 import database.Query;
@@ -76,7 +78,7 @@ public class Main {
 		case 1: endFor =1;break;
 		case 2: endFor =5;break;
 		case 3: endFor =60;break;
-		case 4: endFor =650;break;
+		case 4: endFor =700;break;
 		default:
 			break;
 		}
@@ -123,7 +125,7 @@ public class Main {
     				+ "17.High Query 7: Vietnam join Event in 2018 \n"
     				+ "18.High Query 8: Cao Van Duy join Organization in 2018 ? \n"
     				+ "19.High Query 9: What event does happen Vietnam in 2018 ?  \n"
-    				+ "20.High Query 10: Microsoft Corporation organize Event in 2018 \n"
+    				+ "20.High Query 10: DH Bach Khoa organize Event in 2018 \n"
     				+ "21. Count the Entity \n"
     				+ "22. Count the Relation"
 
@@ -135,8 +137,10 @@ public class Main {
     }
     
     public static boolean doQuery(Scanner s) throws Exception {
+    	ConnectAG_Server connect = new ConnectAG_Server();
+		AGRepositoryConnection conn = connect.connectRepository("/", RepositoryID, false);
     	boolean cont = true;
-    	Query query = new Query();
+    	Query query = new Query(conn);
     	long start = 0;
     	long end = 0;
     	switch (chooseQueryOption) {
@@ -147,7 +151,7 @@ public class Main {
 			setInputString(s);
 			query.setInputLabel(getInputString());
 			start = System.currentTimeMillis();
-			query.searchNameByLabel("/", RepositoryID);
+			query.searchNameByLabel(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 1 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -156,7 +160,7 @@ public class Main {
 			setInputString(s);
 			query.setInputTimeGetLink(getInputString());
 			start = System.currentTimeMillis();
-			query.searchNameByTimeGetLink("/", RepositoryID);	
+			query.searchNameByTimeGetLink(conn);	
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 2 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;	
@@ -165,7 +169,7 @@ public class Main {
 			setInputString(s);
 			query.setInputLink(getInputString());
 			start = System.currentTimeMillis();
-			query.searchNameByLink("/", RepositoryID);
+			query.searchNameByLink(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 3 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;	
@@ -173,7 +177,8 @@ public class Main {
 			System.out.println("Get Person Name:");
 			setInputString(s);
 			start = System.currentTimeMillis();
-			query.searchPersonNameByPosition("/", RepositoryID,getInputString());
+			query.setposition(getInputString());
+			query.searchPersonNameByPosition(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 4 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -182,7 +187,7 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchBaseInforByName("/", RepositoryID);
+			query.searchBaseInforByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 5 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -191,7 +196,7 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchLabelByName("/", RepositoryID);
+			query.searchLabelByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 6 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -200,7 +205,7 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchDescriptionByName("/", RepositoryID);
+			query.searchDescriptionByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 7 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -209,7 +214,7 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchLinkByName("/", RepositoryID);
+			query.searchLinkByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 8 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -218,7 +223,7 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchTimeGetLinkByName("/", RepositoryID);
+			query.searchTimeGetLinkByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 9 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
@@ -227,79 +232,79 @@ public class Main {
 			setInputString(s);
 			query.setInputName(getInputString());
 			start = System.currentTimeMillis();
-			query.searchTypeByName("/", RepositoryID);
+			query.searchTypeByName(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Normal Query 10 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 11:
 			start = System.currentTimeMillis();
-			query.HighQuery1("/", RepositoryID);
+			query.HighQuery1(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 1 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 12:
 			start = System.currentTimeMillis();
-			query.HighQuery2("/", RepositoryID);
+			query.HighQuery2(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 2 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 13:
 			start = System.currentTimeMillis();
-			query.HighQuery3("/", RepositoryID);
+			query.HighQuery3(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 3 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 14:
 			start = System.currentTimeMillis();
-			query.HighQuery4("/", RepositoryID);
+			query.HighQuery4(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 4 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 15:
 			start = System.currentTimeMillis();
-			query.HighQuery5("/", RepositoryID);
+			query.HighQuery5(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 5 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 16:
 			start = System.currentTimeMillis();
-			query.HighQuery6("/", RepositoryID);
+			query.HighQuery6(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 6 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 17:
 			start = System.currentTimeMillis();
-			query.HighQuery7("/", RepositoryID);
+			query.HighQuery7(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 7 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 18:
 			start = System.currentTimeMillis();
-			query.HighQuery8("/", RepositoryID);
+			query.HighQuery8(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 8 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 19:
 			start = System.currentTimeMillis();
-			query.HighQuery9("/", RepositoryID);
+			query.HighQuery9(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 9 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 20:
 			start = System.currentTimeMillis();
-			query.HighQuery10("/", RepositoryID);
+			query.HighQuery10(conn);
 			end = System.currentTimeMillis();
 			System.out.println("High Query 10 executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 21: // Count the Entity
 			start = System.currentTimeMillis();
-			query.countEntity("/", RepositoryID);
+			query.countEntity(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Counting Entity executed during " + (-start+end)/1000.0 + " second(s)");
 			break;
 		case 22: // Count the Relation
 			start = System.currentTimeMillis();
-			query.countRelation("/", RepositoryID);
+			query.countRelation(conn);
 			end = System.currentTimeMillis();
 			System.out.println("Counting Relation executed during " + (-start+end)/1000.0 + " second(s)");
 			break;

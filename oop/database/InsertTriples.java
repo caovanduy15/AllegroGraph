@@ -14,9 +14,7 @@ import com.franz.agraph.repository.AGValueFactory;
 import entity.*;
 
 public class InsertTriples extends Utility {
-
-	static final String ontology = "http://example.org/ontology/";
-	static final String relation = ontology+"Relation/";
+	
 	private static AtomicInteger count = new AtomicInteger(0);
 
 	public void assertTriples(String CatalogID, String RepositoryID) throws Exception {
